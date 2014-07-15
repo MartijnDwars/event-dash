@@ -1,0 +1,29 @@
+<div id="auditPage">
+	<div class="page-header">
+		<h1>Audit</h1>
+	</div>
+
+	<form name="auditForm" ng-submit="auditForm.$valid && audit()" novalidate>
+		<div class="form-group">
+			<label for="entityType">Entity type:</label>
+			<input type="text" id="entityType" class="form-control" ng-model="filter.entityType" required />
+		</div>
+		<div class="form-group">
+			<label for="entityId">Entity id:</label>
+			<input type="text" id="entityId" class="form-control" ng-model="filter.entityId" required />
+		</div>
+		<button type="submit" class="btn btn-primary">Get</button>
+	</form>
+
+	<div class="page-header">
+		<h2>History</h2>
+	</div>
+
+	<div class="alert alert-info" ng-show="submit">Number of results: <em>{{ events.length }}</em></div>
+
+	<div class="list-group">
+		<a class="list-group-item" ng-click="open(event)" ng-repeat="event in events">
+			{{ event.timestamp }}
+		</a>
+	</ol>
+</div>

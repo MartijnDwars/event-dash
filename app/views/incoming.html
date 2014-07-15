@@ -1,0 +1,17 @@
+<div id="auditPage">
+	<div class="page-header">
+		<h1>Incoming</h1>
+	</div>
+	
+	<div class="page-header">
+		<h2>Events</h2>
+	</div>
+
+	<div class="alert alert-info" ng-show="submit">Number of results: <em>{{ events.length }}</em></div>
+
+	<div class="list-group">
+		<a class="list-group-item" ng-click="open(event)" ng-repeat="event in events">
+			{{ event.timestamp }}
+		</a>
+	</ol>
+</div>

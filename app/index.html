@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="dolphin">
+	<head>
+		<meta charset="utf-8" />
+		
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="styles/app.css" />
+
+		<!-- jQuery -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<!-- AngularJS -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+
+		<!-- Angular-Route -->
+		<script src="//code.angularjs.org/1.2.16/angular-route.min.js"></script>
+
+		<!-- UnderscoreJS -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+
+		<!-- HighChart -->
+		<script src="//code.highcharts.com/highcharts.js"></script>
+
+		<!-- Moment.js -->
+		<script src="vendor/moment.min.js"></script>
+
+		<!-- Twix.js -->
+		<script src="vendor/twix.min.js"></script>
+		<script src="vendor/moment-range.js"></script>
+
+		<!-- Angular factory: Underscore -->
+		<script src="vendor/underscore.js"></script>
+
+		<!-- Angular directive: Highcharts -->
+		<script src="vendor/highcharts-ng.js"></script>
+
+		<!-- Angular directive: Angular UI -->
+		<script src="vendor/ui-bootstrap-0.9.0.min.js"></script>
+		<script src="vendor/ui-bootstrap-tpls-0.9.0.min.js"></script>
+
+		<!-- Dolphin -->
+		<script src="scripts/app.js"></script>
+
+		<!-- Dolphin controllers -->
+		<script src="scripts/controllers/DashboardController.js"></script>
+		<script src="scripts/controllers/FunnelController.js"></script>
+		<script src="scripts/controllers/AuditController.js"></script>
+		<script src="scripts/controllers/IncomingController.js"></script>
+		<script src="scripts/controllers/UtilsController.js"></script>
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Dolphin</a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li ng-class="{ active:isActive(['', '/dashboard']) }"><a href="#">Dashboard</a></li>
+							<li ng-class="{ active:isActive('/funnel') }"><a href="#/funnel">Funnel</a></li>
+							<li ng-class="{ active:isActive('/audit') }"><a href="#/audit">Audit</a></li>
+							<li ng-class="{ active:isActive('/incoming') }"><a href="#/incoming">Incoming</a></li>
+							<li ng-class="{ active:isActive('/utils') }"><a href="#/utils">Utilities</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div ng-view></div>
+		</div>
+	</body>
+</html>

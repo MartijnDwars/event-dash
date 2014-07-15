@@ -1,0 +1,40 @@
+body {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.navbar {
+	margin-bottom: 20px;
+}
+
+div.panel-body.logins h3 {
+	margin: 10px 0;
+	text-align: center;
+}
+
+canvas#myChart {
+	width: 600px;
+}
+
+/* ### Funnel page ### */
+
+div#funnelPage ol > li {
+	min-height: 30px;
+	padding-bottom: 20px;
+}
+
+div#funnelPage ol ul li {
+	width: 400px;
+	padding-top: 5px;
+}
+
+div#funnelPage ol ul li button.close {
+	float: none;
+}
+
+/* ### Audit page ### */
+
+div#auditPage .list-group a {
+	display: block;
+	cursor: pointer;
+}
