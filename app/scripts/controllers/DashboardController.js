@@ -7,14 +7,15 @@ angular.module('dolphin.controllers').controller('DashboardController', function
 		= $scope.logins
 		= $scope.sales
 		= $scope.conversations
+		= $scope.visits
 		= 0;
 
 	// Registrations (count)
 	$http
-		.post(DOLPHIN_API + '/count/registration', {})
+		.post(DOLPHIN_API + '/count/visited', {})
 		.success(function (data) {
 			if (undefined !== data[0]) {
-				$scope.registrations = data[0].value;
+				$scope.visits = data[0].value;
 			}
 		});
 
