@@ -16,14 +16,6 @@ angular.module('dolphin.controllers').controller('UtilsController', function (DO
 		"loadtime": 50
 	};
 
-	$scope.registration = {
-		"timestamp": "2014-05-25T12:34:56.000Z",
-		"actor": {
-			"id": 1,
-			"groupId": 1
-		}
-	};
-
 	$scope.sale = {
 		"timestamp": new Date(),
 		"actor": {
@@ -45,6 +37,25 @@ angular.module('dolphin.controllers').controller('UtilsController', function (DO
 			"name": "Rik Nijessen"
 		}
 	};
+
+	// Function to create a registration event with random timestamp
+	$scope.createRegistrationEvent = function() {
+		var randomDay = Math.floor((Math.random() * 31) + 1);
+		if (randomDay < 10) {
+			randomDay = '0' + randomDay;
+		}
+
+		$scope.registration = {
+			"timestamp": "2014-05-" + randomDay + "T12:34:56.000Z",
+			"actor": {
+				"id": 1,
+				"groupId": 1
+			}
+		};
+	}
+
+	// Always run the create function once
+	$scope.createRegistrationEvent();
 
 	$scope.fire = function(collection, event) {
 		$http

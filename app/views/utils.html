@@ -10,9 +10,9 @@
 <pre>{{ login2 | json }}</pre>
 <button class="btn btn-primary" ng-click="fire('login', login2)">Fire!</button>
 
-<h2>Registration</h2>
+<h2>Registration (Random Day)</h2>
 <pre>{{ registration | json }}</pre>
-<button class="btn btn-primary" ng-click="fire('registration', registration)">Fire!</button>
+<button class="btn btn-primary" ng-click="fire('registration', registration); createRegistrationEvent()">Fire!</button>
 
 <h2>Sale</h2>
 <pre>{{ sale | json }}</pre>
