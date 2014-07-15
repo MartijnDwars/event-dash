@@ -63,7 +63,7 @@ angular.module('dolphin.controllers').controller('FunnelController', function (D
 					},
 					series: [{
 						name: 'Users',
-						data: data.counts
+						data: data
 					}]
 				};
 			});
