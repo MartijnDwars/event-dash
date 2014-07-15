@@ -8,6 +8,8 @@ angular.module('dolphin.controllers').controller('DashboardController', function
 		= $scope.sales
 		= $scope.conversations
 		= $scope.visits
+		= $scope.zalando_visits_male
+		= $scope.zalando_visits_female
 		= 0;
 
 	// Registrations (count)
@@ -16,6 +18,24 @@ angular.module('dolphin.controllers').controller('DashboardController', function
 		.success(function (data) {
 			if (undefined !== data[0]) {
 				$scope.visits = data[0].value;
+			}
+		});
+
+	// Zalando visits (male)
+	$http
+		.post(DOLPHIN_API + '/count/visited', { filter: { entityType: "organization", entityId: "13", gender: "MALE" } })
+		.success(function (data) {
+			if (undefined !== data[0]) {
+				$scope.zalando_visits_male = data[0].value;
+			}
+		});
+
+	// Zalando visits (female)
+	$http
+		.post(DOLPHIN_API + '/count/visited', { filter: { entityType: "organization", entityId: "13", gender: "FEMALE" } })
+		.success(function (data) {
+			if (undefined !== data[0]) {
+				$scope.zalando_visits_female = data[0].value;
 			}
 		});
 
