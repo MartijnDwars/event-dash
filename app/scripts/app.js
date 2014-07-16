@@ -11,6 +11,10 @@
 				templateUrl: 'views/dashboard.html',
 				controller: 'DashboardController'
 			})
+			.when('/timeseries', {
+				templateUrl: 'views/timeseries.html',
+				controller: 'TimeSeriesController'
+			})
 			.when('/funnel', {
 				templateUrl: 'views/funnel.html',
 				controller: 'FunnelController',

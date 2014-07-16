@@ -43,6 +43,7 @@
 
 		<!-- Dolphin controllers -->
 		<script src="scripts/controllers/DashboardController.js"></script>
+		<script src="scripts/controllers/TimeSeriesController.js"></script>
 		<script src="scripts/controllers/FunnelController.js"></script>
 		<script src="scripts/controllers/AuditController.js"></script>
 		<script src="scripts/controllers/IncomingController.js"></script>
@@ -65,6 +66,7 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
 							<li ng-class="{ active:isActive(['', '/dashboard']) }"><a href="#">Dashboard</a></li>
+							<li ng-class="{ active:isActive('/timeseries') }"><a href="#/timeseries">Time Series</a></li>
 							<li ng-class="{ active:isActive('/funnel') }"><a href="#/funnel">Funnel</a></li>
 							<li ng-class="{ active:isActive('/audit') }"><a href="#/audit">Audit</a></li>
 							<li ng-class="{ active:isActive('/incoming') }"><a href="#/incoming">Incoming</a></li>
