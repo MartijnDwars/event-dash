@@ -2,7 +2,11 @@
 	<h1>Utilities</h1>
 </div>
 
-<h2>Login</h2>
+<h2>Google Page Visit (Random Day till Today)</h2>
+<pre>{{ visited | json }}</pre>
+<button class="btn btn-primary" ng-click="fire('visited', visited); createVisitedEvent()">Fire!</button>
+
+<!-- <h2>Login</h2>
 <pre>{{ login | json }}</pre>
 <button class="btn btn-primary" ng-click="fire('login', login)">Fire!</button>
 
@@ -10,14 +14,10 @@
 <pre>{{ login2 | json }}</pre>
 <button class="btn btn-primary" ng-click="fire('login', login2)">Fire!</button>
 
-<h2>Registration (Random Day)</h2>
-<pre>{{ registration | json }}</pre>
-<button class="btn btn-primary" ng-click="fire('registration', registration); createRegistrationEvent()">Fire!</button>
-
 <h2>Sale</h2>
 <pre>{{ sale | json }}</pre>
 <button class="btn btn-primary" ng-click="fire('sale', sale)">Fire!</button>
 
 <h2>Modified</h2>
 <pre>{{ modified | json }}</pre>
-<button class="btn btn-primary" ng-click="fire('modified', modified)">Fire!</button>
+<button class="btn btn-primary" ng-click="fire('modified', modified)">Fire!</button> -->

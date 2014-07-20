@@ -4,20 +4,9 @@
 
 <div class="row">
 	<div class="col-sm-3">
-		<div class="panel panel-success">
-			<div class="panel-heading">
-				<h3 class="panel-title">Minisite visits</h3>
-			</div>
-			<div class="panel-body logins">
-				<h3>{{ visits }}</h3>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-sm-3">
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<h3 class="panel-title">Logins</h3>
+				<h3 class="panel-title">Logins<br />&nbsp;</h3>
 			</div>
 			<div class="panel-body logins">
 				<h3>{{ logins | number }}</h3>
@@ -26,6 +15,39 @@
 	</div>
 
 	<div class="col-sm-3">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title">Minisite visits<br />&nbsp;</h3>
+			</div>
+			<div class="panel-body logins">
+				<h3>{{ visits }}</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-3">
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h3 class="panel-title">Zalando:<br />male visits</h3>
+			</div>
+			<div class="panel-body logins">
+				<h3>{{ zalando_visits_male | number }}</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-3">
+		<div class="panel panel-warning">
+			<div class="panel-heading">
+				<h3 class="panel-title">Zalando:<br />female visits</h3>
+			</div>
+			<div class="panel-body logins">
+				<h3>{{ zalando_visits_female | number }}</h3>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="col-sm-3">
 		<div class="panel panel-danger">
 			<div class="panel-heading">
 				<h3 class="panel-title">Sales</h3>
@@ -45,29 +67,5 @@
 				<h3>{{ conversations | number }}</h3>
 			</div>
 		</div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-sm-3">
-		<div class="panel panel-success">
-			<div class="panel-heading">
-				<h3 class="panel-title">Zalando male visits</h3>
-			</div>
-			<div class="panel-body logins">
-				<h3>{{ zalando_visits_male | number }}</h3>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-sm-3">
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<h3 class="panel-title">Zalando female visits</h3>
-			</div>
-			<div class="panel-body logins">
-				<h3>{{ zalando_visits_female | number }}</h3>
-			</div>
-		</div>
-	</div>
+	</div> -->
 </div>

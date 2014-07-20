@@ -1,10 +1,7 @@
 angular.module('dolphin.controllers').controller('FunnelController', function (DOLPHIN_API, $scope, $http, _) {
 	$scope.steps = [{
-		collection: 'login',
-		filters: [{
-			key: 'actor.groupId',
-			value: '1'
-		}]
+		collection: 'visited',
+		filters: []
 	}];
 
 	$scope.addStep = function () {

@@ -4,19 +4,22 @@ angular.module('dolphin.controllers').controller('TimeSeriesController', functio
 	// TODO: Ordering? I want the days to be chronological, even though I'm filtering..
 	// TODO: dayOfWeek is hardcoded..
 	// TODO: Granularity is hardcoded..
-	var from = '2014-05-01T00:00:00.000Z';
-	var to = '2014-05-31T00:00:00.000Z';
+	var from = '2014-07-01T00:00:00.000Z';
+	var to = '2014-07-31T00:00:00.000Z';
 
 	$http
-		.post(DOLPHIN_API + '/timeseries/count/registration', {
+		.post(DOLPHIN_API + '/timeseries/count/visited', {
 			from: from,
 			to: to,
-			filter: {},
+			filter: {
+				entityId: '16',
+				entityType: 'organization'
+			},
 			granularity: 'DAY'
 		})
 		.success(function (data) {
-			var start = moment(new Date(2014, 4, 1, 2))
-			  , end   = moment(new Date(2014, 4, 31, 2))
+			var start = moment(new Date(2014, 6, 1, 2))
+			  , end   = moment(new Date(2014, 6, 31, 2))
 			  , range = moment().range(start, end);
 
 			// TODO: Why can't I iterate over a range? Now I need to push the days to an array first..
@@ -61,7 +64,7 @@ angular.module('dolphin.controllers').controller('TimeSeriesController', functio
 					title: null
 				},
 				series: [{
-					name: 'Registrations',
+					name: 'Visits',
 					data: values
 				}]
 			};

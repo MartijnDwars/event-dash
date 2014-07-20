@@ -1,11 +1,14 @@
-angular.module('dolphin.controllers').controller('AuditController', function (DOLPHIN_API, $scope, $http, $modal) {
+angular.module('dolphin.controllers').controller('AuditController', function (DOLPHIN_API, $scope, $http, $modal, _) {
+	$scope.collection = 'visited';
 	$scope.filter = {
-		entityType: 'companyPage',
-		entityId: '1'
+		entityType: '',
+		entityId: ''
 	};
 
 	$scope.audit = function () {
-		$http.post(DOLPHIN_API + '/event/modified', {filter: $scope.filter})
+		$http.post(DOLPHIN_API + '/event/' + $scope.collection, {filter: _.pick($scope.filter, function (value) {
+			return value != '';
+		})})
 			.success(function (data) {
 				$scope.events = data;
 				$scope.submit = true;
@@ -14,7 +17,7 @@ angular.module('dolphin.controllers').controller('AuditController', function (DO
 
 	$scope.open = function (event) {
 		var modalInstance = $modal.open({
-			templateUrl: 'auditModal.partial.html',
+			templateUrl: 'views/auditModal.partial.html',
 			scope: $scope,
 			controller: ModalInstanceCtrl,
 			resolve: {
